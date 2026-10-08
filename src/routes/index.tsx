@@ -34,6 +34,9 @@ import { Button } from "@/components/ui/button";
 const whatsappUrl =
   "https://wa.me/5546999292828?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20o%20escritório.";
 
+const publicSiteUrl = import.meta.env.VITE_SITE_URL || "https://lemonie-assis-web.lovable.app";
+const lovableAssetUrl = (path: string) => new URL(path, publicSiteUrl).href;
+
 const navItems = [
   ["Áreas", "#areas"],
   ["Como trabalhamos", "#como-trabalhamos"],
@@ -57,10 +60,10 @@ const steps = [
 ];
 
 const team = [
-  { name: "Dr. Leandro Gentil Lemonie", role: "Advogado · OAB/PR 61.101", image: leandro.url },
-  { name: "Dr. Vinicius do Vale Assis", role: "Advogado · OAB/PR 33.386", image: vinicius.url },
-  { name: "Dra. Sidiane Cristina Canutz", role: "Advogada · OAB/PR 97.394", image: sidiane.url },
-  { name: "Paula Andressa da Silva", role: "Assessora Jurídica", image: paula.url },
+  { name: "Dr. Leandro Gentil Lemonie", role: "Advogado · OAB/PR 61.101", image: lovableAssetUrl(leandro.url) },
+  { name: "Dr. Vinicius do Vale Assis", role: "Advogado · OAB/PR 33.386", image: lovableAssetUrl(vinicius.url) },
+  { name: "Dra. Sidiane Cristina Canutz", role: "Advogada · OAB/PR 97.394", image: lovableAssetUrl(sidiane.url) },
+  { name: "Paula Andressa da Silva", role: "Assessora Jurídica", image: lovableAssetUrl(paula.url) },
 ];
 
 const faqs = [
@@ -83,23 +86,23 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "Lemonie & Assis Advocacia e Consultoria" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: publicSiteUrl },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Lemonie & Assis | Advocacia Empresarial em Realeza, PR" },
       { name: "twitter:description", content: "Advocacia empresarial, cível e trabalhista em Realeza-PR, com atendimento presencial e online." },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: publicSiteUrl }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LegalService",
-          "@id": "/#escritorio",
+          "@id": `${publicSiteUrl}/#escritorio`,
           name: "Lemonie & Assis Advocacia e Consultoria",
           description: "Escritório de advocacia empresarial, cível e trabalhista em Realeza, Paraná, com atendimento presencial e online.",
-          url: "/",
-          logo: "/favicon.png",
+          url: publicSiteUrl,
+          logo: `${publicSiteUrl}/favicon.png`,
           telephone: "+55 46 99929-2828",
           email: "lemonieeassisadvocacia@gmail.com",
           address: {
@@ -233,7 +236,7 @@ function Index() {
 
         <section id="sobre" className="scroll-mt-20 py-16 sm:py-28">
           <div className="section-shell grid gap-10 sm:gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <div className="reveal overflow-hidden rounded-lg shadow-[0_30px_80px_-45px_color-mix(in_oklab,var(--primary)_62%,transparent)]"><img src={equipe2.url} alt="Equipe Lemonie & Assis na sala de reunião" width={671} height={754} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-[1.025]" /></div>
+            <div className="reveal overflow-hidden rounded-lg shadow-[0_30px_80px_-45px_color-mix(in_oklab,var(--primary)_62%,transparent)]"><img src={lovableAssetUrl(equipe2.url)} alt="Equipe Lemonie & Assis na sala de reunião" width={671} height={754} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-[1.025]" /></div>
             <div className="reveal"><SectionHeading eyebrow="Sobre o escritório" title="Lemonie & Assis Advocacia e Consultoria" /><p className="mt-6 text-base leading-8 text-muted-foreground">Somos um escritório de Realeza, no Paraná, voltado à advocacia empresarial, cível e trabalhista. Nosso trabalho une conhecimento técnico, atenção ao contexto de cada cliente e comunicação transparente. Atendemos de forma presencial, em nossa sala de reunião, ou online, onde você estiver.</p>
               <div className="mt-10 divide-y divide-border border-y border-border">
                 {[[BriefcaseBusiness,"Estratégia","cada caso começa por entender o negócio."],[FileCheck2,"Clareza","explicações objetivas, sem juridiquês desnecessário."],[Users,"Proximidade","contato direto com quem cuida do seu caso."]].map(([Icon,title,text]) => { const I = Icon as typeof BriefcaseBusiness; return <div key={String(title)} className="grid grid-cols-[auto_minmax(0,1fr)] gap-4 py-5"><I className="mt-1 h-5 w-5 text-accent"/><p><strong className="text-foreground">{String(title)}:</strong> <span className="text-muted-foreground">{String(text)}</span></p></div>})}
