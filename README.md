@@ -24,8 +24,8 @@ bun run dev
 ## Publicação na Vercel
 
 1. Importe o repositório na Vercel.
-2. Mantenha o preset de framework como **Other**; `vercel.json` já define instalação e build.
-3. Não configure Output Directory: o build Nitro gera `.vercel/output` automaticamente.
+2. Mantenha o preset de framework como **Other**; `vercel.json` já define instalação, build e diretório de saída.
+3. Não sobrescreva o Build Command nem o Output Directory configurados pelo repositório.
 4. Cadastre as variáveis abaixo em Production, Preview e Development:
 
 ```text
