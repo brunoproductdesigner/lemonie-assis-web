@@ -11,4 +11,4 @@
 
 - Keep the public site as one anchored index route because the client explicitly requested a one-page experience.
 - Keep reusable interactive controls in `src/components/ui` so accessibility and visual variants remain consistent.
-- Use the dedicated `build:vercel` script for external builds so SSR and file-based routes deploy through Vercel's Build Output API.
+- Keep Nitro pinned to the Vercel preset for self-hosted builds so SSR and file-based routes deploy through Vercel's Build Output API.
