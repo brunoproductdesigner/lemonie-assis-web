@@ -72,14 +72,56 @@ const faqs = [
 ];
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Lemonie & Assis | Advocacia Empresarial em Realeza, PR" },
       { name: "description", content: "Advocacia empresarial, cível e trabalhista em Realeza-PR. Defesa e estratégia jurídica para empresas, com atendimento presencial e online." },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "Lemonie & Assis | Advocacia Empresarial em Realeza, PR" },
       { property: "og:description", content: "Advocacia empresarial, cível e trabalhista em Realeza-PR. Defesa e estratégia jurídica para empresas, com atendimento presencial e online." },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:site_name", content: "Lemonie & Assis Advocacia e Consultoria" },
+      { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Lemonie & Assis | Advocacia Empresarial em Realeza, PR" },
+      { name: "twitter:description", content: "Advocacia empresarial, cível e trabalhista em Realeza-PR, com atendimento presencial e online." },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LegalService",
+          "@id": "/#escritorio",
+          name: "Lemonie & Assis Advocacia e Consultoria",
+          description: "Escritório de advocacia empresarial, cível e trabalhista em Realeza, Paraná, com atendimento presencial e online.",
+          url: "/",
+          logo: "/favicon.png",
+          telephone: "+55 46 99929-2828",
+          email: "lemonieeassisadvocacia@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "R. Belém, 2929, sala 03, Centro",
+            addressLocality: "Realeza",
+            addressRegion: "PR",
+            postalCode: "85770-000",
+            addressCountry: "BR",
+          },
+          sameAs: ["https://www.instagram.com/lemonieeassisadvocacia"],
+          employee: team.map((person) => ({ "@type": "Person", name: person.name, jobTitle: person.role })),
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Áreas de atuação",
+            itemListElement: practices.map((practice) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: practice.title, description: practice.text },
+            })),
+          },
+        }),
+      },
     ],
   }),
   component: Index,

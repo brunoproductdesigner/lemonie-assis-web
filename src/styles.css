@@ -158,6 +158,10 @@
   margin-inline: auto;
 }
 
+@media (min-width: 640px) {
+  .section-shell { width: min(100% - 3rem, 76rem); }
+}
+
 @utility reveal {
   animation: reveal 700ms ease-out both;
   animation-timeline: view();
