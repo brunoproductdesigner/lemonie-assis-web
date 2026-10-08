@@ -259,12 +259,12 @@ function Index() {
           </div>
         </section>
 
-        <section className="parallax-bg relative overflow-hidden py-24 text-primary-foreground sm:py-32" style={{ backgroundImage: `url(${heroImage})` }}><div className="absolute inset-0 bg-primary/80"/><div className="section-shell reveal relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end"><div className="max-w-3xl"><h2 className="text-3xl font-light sm:text-5xl">Vamos conversar sobre o jurídico da sua empresa?</h2><p className="mt-5 text-lg text-primary-foreground/70">Envie uma mensagem e fale diretamente com o escritório.</p></div><WhatsAppLink light>Chamar no WhatsApp</WhatsAppLink></div></section>
+        <section className="parallax-bg relative overflow-hidden py-20 text-primary-foreground sm:py-32" style={{ backgroundImage: `url(${heroImage})` }}><div className="absolute inset-0 bg-primary/80"/><div className="section-shell reveal relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end"><div className="max-w-3xl"><h2 className="text-3xl font-light sm:text-5xl">Vamos conversar sobre o jurídico da sua empresa?</h2><p className="mt-5 text-base leading-7 text-primary-foreground/70 sm:text-lg">Envie uma mensagem e fale diretamente com o escritório.</p></div><WhatsAppLink light className="w-full sm:w-auto">Chamar no WhatsApp</WhatsAppLink></div></section>
 
-        <section id="contato" className="scroll-mt-20 py-20 sm:py-28">
+        <section id="contato" className="scroll-mt-20 py-16 sm:py-28">
           <div className="section-shell"><div className="reveal"><SectionHeading eyebrow="Contato e localização" title="Estamos em Realeza, PR" /></div>
-            <div className="mt-12 grid overflow-hidden rounded-lg border border-border lg:grid-cols-[0.75fr_1.25fr]">
-              <div className="bg-primary p-7 text-primary-foreground sm:p-10">
+            <div className="mt-10 grid overflow-hidden rounded-lg border border-border sm:mt-12 lg:grid-cols-[0.75fr_1.25fr]">
+              <div className="bg-primary p-6 text-sm text-primary-foreground sm:p-10 sm:text-base">
                 <div className="space-y-7">
                   <a href="https://maps.google.com/?q=Comercial+Realtec+R.+Belém+2929+sala+03+Realeza+PR" target="_blank" rel="noreferrer" className="grid grid-cols-[auto_minmax(0,1fr)] gap-4"><MapPin className="mt-1 h-5 w-5 text-primary-foreground/60"/><span className="leading-7">Comercial Realtec, R. Belém, nº 2929, sala 03, Centro, Realeza, PR, 85770-000</span></a>
                   <a href="tel:+5546999292828" className="flex items-center gap-4"><Phone className="h-5 w-5 text-primary-foreground/60"/><span>(46) 99929-2828</span></a>
@@ -273,15 +273,15 @@ function Index() {
                 </div>
                 <WhatsAppLink light className="mt-10 w-full">Falar no WhatsApp</WhatsAppLink>
               </div>
-              <iframe title="Mapa do escritório Lemonie & Assis" src="https://www.google.com/maps?q=Comercial%20Realtec%2C%20R.%20Bel%C3%A9m%2C%202929%2C%20Realeza%2C%20PR&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="min-h-[420px] w-full border-0" />
+              <iframe title="Mapa do escritório Lemonie & Assis" src="https://www.google.com/maps?q=Comercial%20Realtec%2C%20R.%20Bel%C3%A9m%2C%202929%2C%20Realeza%2C%20PR&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="min-h-80 w-full border-0 sm:min-h-[420px]" />
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-primary-foreground/10 bg-primary py-12 text-primary-foreground"><div className="section-shell grid gap-8 lg:grid-cols-[auto_1fr] lg:items-end"><img src={logo} alt="Lemonie & Assis" className="w-56 brightness-0 invert" /><div className="lg:text-right"><p className="text-sm">© 2026 Lemonie & Assis Advocacia e Consultoria · Realeza, PR</p><p className="mt-3 max-w-3xl text-xs leading-5 text-primary-foreground/55 lg:ml-auto">Este site tem caráter exclusivamente informativo, nos termos do Provimento 205/2021 do Conselho Federal da OAB, e não constitui promessa de resultado ou aconselhamento jurídico.</p></div></div></footer>
+      <footer className="border-t border-primary-foreground/10 bg-primary py-10 text-primary-foreground sm:py-12"><div className="section-shell grid justify-items-center gap-8 text-center lg:grid-cols-[auto_1fr] lg:justify-items-stretch lg:items-end lg:text-right"><img src={logo} alt="Lemonie & Assis" className="w-52 brightness-0 invert sm:w-56" /><div><p className="text-sm">© 2026 Lemonie & Assis Advocacia e Consultoria · Realeza, PR</p><p className="mt-3 max-w-3xl text-xs leading-5 text-primary-foreground/55 lg:ml-auto">Este site tem caráter exclusivamente informativo, nos termos do Provimento 205/2021 do Conselho Federal da OAB, e não constitui promessa de resultado ou aconselhamento jurídico.</p></div></div></footer>
 
-      <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Falar com o escritório pelo WhatsApp" className="whatsapp-pulse fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-xl transition-transform hover:scale-105 sm:bottom-7 sm:right-7"><MessageCircle className="h-7 w-7" /><span className="sr-only">WhatsApp</span></a>
+      <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Falar com o escritório pelo WhatsApp" className="whatsapp-pulse fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-xl transition-transform hover:scale-105 sm:bottom-7 sm:right-7"><MessageCircle className="h-7 w-7" /><span className="sr-only">WhatsApp</span></a>
     </div>
   );
 }
