@@ -1,37 +1,45 @@
-# Lemonie & Assis Online
-
-Crie um one-page de escritório de advocacia, em português do Brasil, React + Tailwind, totalmente responsivo (mobile-first). Sem formulário de contato.
-
-Marca: Lemonie & Assis Advocacia e Consultoria. Identidade sóbria e premium: azul-marinho profundo (#0B1F3A), cinza-aço, branco e um azul de acento (#1F5FA8). Tipografia: serifada elegante nos títulos (ex.: Playfair Display ou Cormorant) e sans-serif limpa no corpo (ex.: Inter). Use o logo anexo.
-
-Seções, nesta ordem: Header fixo, Hero, Áreas de atuação (4 cards), Faixa de destaque, Como trabalhamos (4 passos), Sobre (3 pilares), Equipe (4 cards com foto circular), FAQ (accordion), CTA final, Contato com mapa do Google, Rodapé.
-
-Todos os botões de CTA e um botão flutuante fixo no canto inferior direito (ícone do WhatsApp, com leve pulso) devem abrir:
-
-https://wa.me/5546999292828?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20o%20escritório.
-
-Animações suaves de entrada ao rolar, cards com hover discreto, muito espaço em branco, contraste alto. Não invente números, depoimentos ou promessas de resultado. Use exatamente a copy que vou colar abaixo.
-
-Em anexo logotipo, e fotos. 
-em espaços genéricos, crie fotos relacionados a área de advocacia, com pessoas, relações de aperto de mão, confiança, segurança. Design clean, com efeitos, minimalista, mas elegante, estilo apple. nada simplório demais.
+# Lemonie & Assis Advocacia e Consultoria
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/da201732-2b56-4487-acbe-18c2386b9d00).
+Open your project in the [Lovable editor](https://lovable.dev) and keep building.
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
+- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
 
-## Development
+## Desenvolvimento
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Use Bun para manter as versões registradas no lockfile.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+git clone <url-do-repositorio>
+cd <nome-do-repositorio>
+bun install --frozen-lockfile
+bun run dev
 ```
+
+## Publicação na Vercel
+
+1. Importe o repositório na Vercel.
+2. Mantenha o preset de framework como **Other**; a configuração do projeto já define o destino Vercel, instalação, build e diretório de saída.
+3. Não sobrescreva o Build Command nem o Output Directory configurados pelo repositório.
+4. Cadastre as variáveis abaixo em Production, Preview e Development:
+
+```text
+VITE_SITE_URL=https://seu-dominio-final.com.br
+SITE_URL=https://seu-dominio-final.com.br
+```
+
+Use a origem completa, com `https://` e sem barra no final. Enquanto essas variáveis não forem definidas, o site usa `https://lemonie-assis-web.lovable.app` como URL canônica e no sitemap.
+
+Depois de vincular o domínio final, atualize também a linha `Sitemap:` em `public/robots.txt` para o mesmo domínio. O projeto não exige outras variáveis ou serviços externos.
+
+## Built with
+
+- TanStack Start
+- TypeScript
+- React
+- Tailwind CSS

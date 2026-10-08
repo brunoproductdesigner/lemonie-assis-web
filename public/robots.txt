@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://lemonie-assis-web.lovable.app/sitemap.xml
