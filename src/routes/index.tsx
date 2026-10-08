@@ -34,8 +34,8 @@ import { Button } from "@/components/ui/button";
 const whatsappUrl =
   "https://wa.me/5546999292828?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20o%20escritório.";
 
-const publicSiteUrl = import.meta.env.VITE_SITE_URL || "https://lemonie-assis-web.lovable.app";
-const lovableAssetUrl = (path: string) => new URL(path, publicSiteUrl).href;
+const publicSiteUrl = import.meta.env['VITE_SITE_URL'] || "https://lemonie-assis-web.lovable.app";
+const lovableAssetUrl = (path: string) => new URL(path, "https://lemonie-assis-web.lovable.app").href;
 
 const navItems = [
   ["Áreas", "#areas"],
