@@ -152,9 +152,9 @@ function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
-      <div className="section-shell grid h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 lg:flex lg:justify-between">
+      <div className="section-shell grid h-[4.5rem] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-20 lg:flex lg:justify-between">
         <a href="#inicio" aria-label="Lemonie & Assis — início" className="min-w-0">
-          <img src={logo} alt="Lemonie & Assis Advocacia e Consultoria" className="h-auto w-48 max-w-full sm:w-56" />
+          <img src={logo} alt="Lemonie & Assis Advocacia e Consultoria" className="h-auto w-44 max-w-full sm:w-56" />
         </a>
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Navegação principal">
           {navItems.map(([label, href]) => <a key={href} href={href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">{label}</a>)}
@@ -179,34 +179,35 @@ function Header() {
 function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background">
+      <a href="#conteudo" className="fixed left-4 top-3 z-[60] -translate-y-20 rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground shadow-lg transition-transform focus:translate-y-0">Ir para o conteúdo</a>
       <Header />
-      <main>
-        <section id="inicio" className="relative min-h-[92svh] scroll-mt-20 overflow-hidden bg-primary pt-20">
+      <main id="conteudo">
+        <section id="inicio" className="relative min-h-[92svh] scroll-mt-20 overflow-hidden bg-primary pt-[4.5rem] sm:pt-20">
           <img src={heroImage} alt="Profissionais em reunião empresarial" width={1536} height={1024} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[62%_center]" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/75 via-transparent to-transparent" />
-          <div className="section-shell relative flex min-h-[calc(92svh-5rem)] items-center py-16 sm:py-24">
+          <div className="section-shell relative flex min-h-[calc(92svh-4.5rem)] items-center py-12 sm:min-h-[calc(92svh-5rem)] sm:py-24">
             <div className="max-w-3xl text-primary-foreground">
-              <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground/70">Advocacia e Consultoria · Realeza, PR</p>
-              <h1 className="max-w-3xl text-4xl font-light leading-[1.08] sm:text-6xl lg:text-7xl">Segurança jurídica para a sua empresa decidir com tranquilidade.</h1>
+              <p className="mb-5 text-[0.68rem] font-medium uppercase leading-5 tracking-[0.16em] text-primary-foreground/70 sm:mb-6 sm:text-xs sm:tracking-[0.18em]">Advocacia e Consultoria · Realeza, PR</p>
+              <h1 className="max-w-3xl text-[2.15rem] font-light leading-[1.12] sm:text-6xl lg:text-7xl">Segurança jurídica para a sua empresa decidir com tranquilidade.</h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-primary-foreground/80 sm:text-xl sm:leading-8">Atuamos na advocacia empresarial, cível e trabalhista, com estratégia e defesa pensadas para a realidade de cada negócio.</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <WhatsAppLink light>Falar com um advogado no WhatsApp</WhatsAppLink>
-                <Button asChild variant="outline" size="lg" className="border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href="#areas">Conhecer as áreas de atuação <ArrowDown className="h-4 w-4" /></a></Button>
+              <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+                <WhatsAppLink light className="h-auto min-h-12 w-full whitespace-normal px-4 py-3 text-center leading-5 sm:w-auto">Falar com um advogado no WhatsApp</WhatsAppLink>
+                <Button asChild variant="outline" size="lg" className="h-auto min-h-12 w-full whitespace-normal border-primary-foreground/25 px-4 py-3 text-center leading-5 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:w-auto"><a href="#areas">Conhecer as áreas de atuação <ArrowDown className="h-4 w-4 shrink-0" /></a></Button>
               </div>
               <div className="mt-10 flex items-center gap-3 text-sm text-primary-foreground/70"><span className="flex h-7 w-7 items-center justify-center rounded-full border border-primary-foreground/20"><Check className="h-4 w-4" /></span>Atendimento presencial e online</div>
             </div>
           </div>
         </section>
 
-        <section id="areas" className="scroll-mt-20 py-20 sm:py-28">
+        <section id="areas" className="scroll-mt-20 py-16 sm:py-28">
           <div className="section-shell">
             <div className="reveal"><SectionHeading eyebrow="Áreas de atuação" title="Onde podemos atuar ao lado da sua empresa" description="Do dia a dia contratual ao contencioso, o suporte jurídico que o seu negócio precisa." /></div>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+             <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
               {practices.map(({ icon: Icon, title, text }, index) => (
-                <article key={title} className="group reveal min-h-72 rounded-lg border border-border/80 bg-card p-7 shadow-[0_16px_50px_-34px_color-mix(in_oklab,var(--primary)_42%,transparent)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_60px_-30px_color-mix(in_oklab,var(--primary)_48%,transparent)]">
+                 <article key={title} className="group reveal min-h-0 rounded-lg border border-border/80 bg-card p-6 shadow-[0_16px_50px_-34px_color-mix(in_oklab,var(--primary)_42%,transparent)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_60px_-30px_color-mix(in_oklab,var(--primary)_48%,transparent)] sm:min-h-72 sm:p-7">
                   <div className="flex items-start justify-between"><span className="grid h-12 w-12 place-items-center rounded-full bg-secondary"><Icon className="h-6 w-6 text-accent" /></span><span className="text-sm font-light text-muted-foreground">0{index + 1}</span></div>
-                  <h3 className="mt-14 text-xl font-normal text-foreground">{title}</h3>
+                   <h3 className="mt-10 text-xl font-normal text-foreground sm:mt-14">{title}</h3>
                   <p className="mt-4 text-sm leading-6 text-muted-foreground">{text}</p>
                 </article>
               ))}
