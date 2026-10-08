@@ -215,24 +215,24 @@ function Index() {
           </div>
         </section>
 
-        <section className="parallax-bg relative overflow-hidden py-20 text-primary-foreground sm:py-28" style={{ backgroundImage: `url(${backgroundJuridico})` }}>
+        <section className="parallax-bg relative overflow-hidden py-16 text-primary-foreground sm:py-28" style={{ backgroundImage: `url(${backgroundJuridico})` }}>
           <div className="absolute inset-0 bg-primary/82" />
           <div className="section-shell reveal relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <div className="max-w-3xl"><p className="text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground/65">Revisão jurídica</p><h2 className="mt-4 text-3xl font-light leading-tight sm:text-4xl">Sua empresa mudou em 2026? O jurídico precisa acompanhar.</h2><p className="mt-5 max-w-2xl leading-7 text-primary-foreground/75">Novos contratos, novos colaboradores, mudanças de rotina e de legislação. Uma revisão jurídica ajuda a identificar pontos de atenção antes que virem problema.</p></div>
-            <WhatsAppLink light>Solicitar uma análise pelo WhatsApp</WhatsAppLink>
+            <WhatsAppLink light className="h-auto min-h-12 w-full whitespace-normal px-4 py-3 text-center leading-5 sm:w-auto">Solicitar uma análise pelo WhatsApp</WhatsAppLink>
           </div>
         </section>
 
-        <section id="como-trabalhamos" className="scroll-mt-20 bg-muted py-20 sm:py-28">
+        <section id="como-trabalhamos" className="scroll-mt-20 bg-muted py-16 sm:py-28">
           <div className="section-shell"><div className="reveal"><SectionHeading eyebrow="Como trabalhamos" title="Um atendimento direto, do primeiro contato à solução" /></div>
-            <ol className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {steps.map((step, index) => <li key={step.title} className="reveal rounded-lg border border-border/80 bg-background p-7 shadow-[0_18px_45px_-36px_color-mix(in_oklab,var(--primary)_45%,transparent)]"><span className="text-sm font-medium text-accent">0{index + 1}</span><h3 className="mt-8 text-2xl font-light">{step.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{step.text}</p></li>)}
+            <ol className="mt-10 grid gap-4 sm:mt-14 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {steps.map((step, index) => <li key={step.title} className="reveal rounded-lg border border-border/80 bg-background p-6 shadow-[0_18px_45px_-36px_color-mix(in_oklab,var(--primary)_45%,transparent)] sm:p-7"><span className="text-sm font-medium text-accent">0{index + 1}</span><h3 className="mt-6 text-2xl font-light sm:mt-8">{step.title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{step.text}</p></li>)}
             </ol>
           </div>
         </section>
 
-        <section id="sobre" className="scroll-mt-20 py-20 sm:py-28">
-          <div className="section-shell grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <section id="sobre" className="scroll-mt-20 py-16 sm:py-28">
+          <div className="section-shell grid gap-10 sm:gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div className="reveal overflow-hidden rounded-lg shadow-[0_30px_80px_-45px_color-mix(in_oklab,var(--primary)_62%,transparent)]"><img src={equipe2.url} alt="Equipe Lemonie & Assis na sala de reunião" width={671} height={754} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-[1.025]" /></div>
             <div className="reveal"><SectionHeading eyebrow="Sobre o escritório" title="Lemonie & Assis Advocacia e Consultoria" /><p className="mt-6 text-base leading-8 text-muted-foreground">Somos um escritório de Realeza, no Paraná, voltado à advocacia empresarial, cível e trabalhista. Nosso trabalho une conhecimento técnico, atenção ao contexto de cada cliente e comunicação transparente. Atendemos de forma presencial, em nossa sala de reunião, ou online, onde você estiver.</p>
               <div className="mt-10 divide-y divide-border border-y border-border">
@@ -242,17 +242,17 @@ function Index() {
           </div>
         </section>
 
-        <section id="equipe" className="parallax-bg relative scroll-mt-20 overflow-hidden py-20 sm:py-28" style={{ backgroundImage: `url(${backgroundJuridico})` }}>
+        <section id="equipe" className="parallax-bg relative scroll-mt-20 overflow-hidden py-16 sm:py-28" style={{ backgroundImage: `url(${backgroundJuridico})` }}>
           <div className="absolute inset-0 bg-primary/92" />
           <div className="section-shell relative"><div className="reveal"><SectionHeading eyebrow="Equipe" title="Quem cuida do seu caso" light /></div>
-            <div className="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
-              {team.map((person) => <article key={person.name} className="reveal rounded-lg border border-primary-foreground/10 bg-primary/45 p-5 text-center backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"><div className="mx-auto aspect-square w-full max-w-52 overflow-hidden rounded-full border-2 border-primary-foreground/70 bg-secondary shadow-xl"><img src={person.image} alt={person.name} width={600} height={600} loading="lazy" className="h-full w-full object-cover" /></div><h3 className="mt-6 text-base font-normal text-primary-foreground sm:text-lg">{person.name}</h3><p className="mt-2 text-xs font-light leading-5 text-primary-foreground/60 sm:text-sm">{person.role}</p></article>)}
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+              {team.map((person) => <article key={person.name} className="reveal rounded-lg border border-primary-foreground/10 bg-primary/45 p-5 text-center backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"><div className="mx-auto aspect-square w-full max-w-44 overflow-hidden rounded-full border-2 border-primary-foreground/70 bg-secondary shadow-xl sm:max-w-52"><img src={person.image} alt={person.name} width={600} height={600} loading="lazy" className="h-full w-full object-cover" /></div><h3 className="mt-5 text-base font-normal text-primary-foreground sm:mt-6 sm:text-lg">{person.name}</h3><p className="mt-2 text-xs font-light leading-5 text-primary-foreground/60 sm:text-sm">{person.role}</p></article>)}
             </div>
           </div>
         </section>
 
-        <section id="faq" className="py-20 sm:py-28">
-          <div className="section-shell grid gap-12 lg:grid-cols-[0.8fr_1.2fr]"><div className="reveal"><SectionHeading eyebrow="Perguntas frequentes" title="Informações para começar" /></div>
+        <section id="faq" className="py-16 sm:py-28">
+          <div className="section-shell grid gap-10 sm:gap-12 lg:grid-cols-[0.8fr_1.2fr]"><div className="reveal"><SectionHeading eyebrow="Perguntas frequentes" title="Informações para começar" /></div>
             <Accordion.Root type="single" collapsible className="reveal border-t border-border">
               {faqs.map(([question, answer], index) => <Accordion.Item key={question} value={`faq-${index}`} className="border-b border-border"><Accordion.Header><Accordion.Trigger className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-6 text-left text-base font-normal text-foreground sm:text-lg">{question}<ChevronDown className="h-5 w-5 shrink-0 text-accent transition-transform duration-300 group-data-[state=open]:rotate-180" /></Accordion.Trigger></Accordion.Header><Accordion.Content className="overflow-hidden text-sm leading-7 text-muted-foreground data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"><p className="pb-6 pr-8">{answer}</p></Accordion.Content></Accordion.Item>)}
             </Accordion.Root>
