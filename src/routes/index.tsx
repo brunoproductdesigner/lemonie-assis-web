@@ -167,7 +167,7 @@ function Header() {
       {open && (
         <nav id="mobile-menu" className="border-t border-border bg-background px-4 pb-5 pt-3 lg:hidden" aria-label="Navegação mobile">
           <div className="mx-auto flex max-w-xl flex-col">
-            {navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-medium text-foreground">{label}</a>)}
+            {navItems.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)} className="flex min-h-12 items-center border-b border-border py-3 text-sm font-medium text-foreground">{label}</a>)}
             <WhatsAppLink className="mt-4 w-full">Falar no WhatsApp</WhatsAppLink>
           </div>
         </nav>
@@ -266,10 +266,10 @@ function Index() {
             <div className="mt-10 grid overflow-hidden rounded-lg border border-border sm:mt-12 lg:grid-cols-[0.75fr_1.25fr]">
               <div className="bg-primary p-6 text-sm text-primary-foreground sm:p-10 sm:text-base">
                 <div className="space-y-7">
-                  <a href="https://maps.google.com/?q=Comercial+Realtec+R.+Belém+2929+sala+03+Realeza+PR" target="_blank" rel="noreferrer" className="grid grid-cols-[auto_minmax(0,1fr)] gap-4"><MapPin className="mt-1 h-5 w-5 text-primary-foreground/60"/><span className="leading-7">Comercial Realtec, R. Belém, nº 2929, sala 03, Centro, Realeza, PR, 85770-000</span></a>
-                  <a href="tel:+5546999292828" className="flex items-center gap-4"><Phone className="h-5 w-5 text-primary-foreground/60"/><span>(46) 99929-2828</span></a>
-                  <a href="mailto:lemonieeassisadvocacia@gmail.com" className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4"><Mail className="h-5 w-5 text-primary-foreground/60"/><span className="min-w-0 break-all">lemonieeassisadvocacia@gmail.com</span></a>
-                  <a href="https://www.instagram.com/lemonieeassisadvocacia" target="_blank" rel="noreferrer" className="flex items-center gap-4"><Instagram className="h-5 w-5 text-primary-foreground/60"/><span>@lemonieeassisadvocacia</span></a>
+                  <a href="https://maps.google.com/?q=Comercial+Realtec+R.+Belém+2929+sala+03+Realeza+PR" target="_blank" rel="noreferrer" className="grid min-h-11 grid-cols-[auto_minmax(0,1fr)] gap-4"><MapPin className="mt-1 h-5 w-5 text-primary-foreground/60"/><span className="leading-7">Comercial Realtec, R. Belém, nº 2929, sala 03, Centro, Realeza, PR, 85770-000</span></a>
+                  <a href="tel:+5546999292828" className="flex min-h-11 items-center gap-4"><Phone className="h-5 w-5 text-primary-foreground/60"/><span>(46) 99929-2828</span></a>
+                  <a href="mailto:lemonieeassisadvocacia@gmail.com" className="grid min-h-11 grid-cols-[auto_minmax(0,1fr)] items-center gap-4"><Mail className="h-5 w-5 text-primary-foreground/60"/><span className="min-w-0 break-all text-[0.82rem] sm:text-base">lemonieeassisadvocacia@gmail.com</span></a>
+                  <a href="https://www.instagram.com/lemonieeassisadvocacia" target="_blank" rel="noreferrer" className="flex min-h-11 items-center gap-4"><Instagram className="h-5 w-5 text-primary-foreground/60"/><span>@lemonieeassisadvocacia</span></a>
                 </div>
                 <WhatsAppLink light className="mt-10 w-full">Falar no WhatsApp</WhatsAppLink>
               </div>
